@@ -9,6 +9,7 @@ const app = Vue.createApp({
             language:'it-IT',
             page:1,
             movies:[],
+            best:[]
 
         }
     },
@@ -31,9 +32,19 @@ const app = Vue.createApp({
     },
     created(){
         this.getpost()
-    }
+        
+    },
     
+    async newGP(){
+        const ris=await fetch('https://api.themoviedb.org/3/tv/popular?api_key=' + this.api_key + '&language=' + this.language + '&page=' + this.page)
+        this.page=this.page+1;
+        const post = await ris.json()
+        console.log(post)
+        this.best = post.results
+        this.movies = this.movies + this.best
 
+    },
+    
 })
 
 
