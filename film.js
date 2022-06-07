@@ -1,5 +1,21 @@
 
 
+const PaginaFilm={
+    template:'<div>Pagina</div>'
+}
+
+
+const routes = [
+    {path: '/', component: PaginaFilm }
+]
+
+const router = VueRouter.createRouter({
+    history: VueRouter.createWebHashHistory(),
+    routes, 
+  })
+
+
+
 const app = Vue.createApp({
     el:"#app",
     data(){
@@ -56,5 +72,5 @@ const app = Vue.createApp({
 })
 
 
-
+app.use(router)
 app.mount('#app')
