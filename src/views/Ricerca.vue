@@ -1,5 +1,11 @@
 <template>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fascinate&family=Monoton&display=swap" rel="stylesheet">
+
+
 <div style="height:40px">
             <form class="form-inline my-2 my-lg-0">
               <div style="float: left">
@@ -21,7 +27,8 @@
     <div class="card" style="background-color:black">
       <div class="card-body" style="background-color:black" >      
         <img :src=" image_path(movie.poster_path)" class="card-img-top">
-        <h5 class="card-title" style="color:white">{{movie.original_title}}</h5>
+        <br>
+        <h5 class="card-title" style="color:mediumpurple; font-family: 'Monoton', cursive;">{{movie.original_title}}</h5>
         
          <router-link 
             :key="movie.id"
