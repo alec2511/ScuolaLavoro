@@ -1,0 +1,76 @@
+<template>
+    <nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav> 
+
+<div class="row">
+  <div class="col-sm-6"
+  v-for="movie in movies" 
+     :key="movie.id"
+  >
+    <div class="card">
+      <div class="card-body">      
+        <img :src=" image_path(movie.poster_path)" class="card-img-top">
+        <h5 class="card-title">{{movie.original_title}}</h5>
+        
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+</template>
+<script >   
+
+ export default{
+
+    data(){
+            
+            return{
+                  api_key:'6f9286d54de4891ea7a5c91779e09786',
+                  language:'it-IT',
+                  movies: {},
+                  page:1
+            }
+        },
+        computed: {
+        },
+        methods:{
+
+          async getpost() 
+          { 
+             console.log(this.$route)
+              return await fetch('https://api.themoviedb.org/3/search/movie?api_key='+this.api_key+'&language='+this.language+'&page='+this.page+'&query='+this.$route.params.name)
+              .then(res =>res.json())  
+              .then(data=>{
+              
+                  this.movies=data.results
+                  
+             console.log(this.movies)
+              })
+          },
+
+      
+        image_path(poster_path) {
+              return 'https://image.tmdb.org/t/p/original'+poster_path
+
+        }          
+
+        },
+            
+            
+        created(){
+            this.getpost()
+            
+        }
+        
+        
+    }
+</script>
+
+come cxambaire la lingua 
+<h5 class="prop" v-if="this.$route.query.value==='en-US' ">POPULARITY:</h5>--> movie
+<h5 class="prop" v-if="this.$route.query.value==='it-IT' ">POPOLARITA':</h5>

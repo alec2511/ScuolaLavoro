@@ -1,4 +1,6 @@
-
+body{
+    background-color: black;
+}
 .titolo{
     color: blueviolet;
     size: 40px;
@@ -6,7 +8,7 @@
     text-align: center;
 }
 .botRic{
-    color: darkmagenta;
+    color: blueviolet;
 }
 .sfondo{
     background-color: black;
@@ -37,7 +39,7 @@ H5{
 }
 .imm:hover{
    
-      opacity: 0.6;
+      opacity: 0.4;
       border-radius: 100px 100px 100px 100px;       
     
 }
@@ -63,3 +65,88 @@ H5{
     color: blueviolet;
 }
 
+.migl{
+    overflow: hidden;
+    background-color: blueviolet;
+
+}
+.sfondo{
+    background-color: black;
+}
+.bottone{
+
+    background-color: black; 
+    color: blueviolet; 
+    font-size: 30px; 
+    font-family: 'Monoton', cursive;
+  
+    
+    
+}
+.centra{
+    display: flex;
+    justify-content: center;
+
+    align-items: center;
+   
+
+}
+.centra1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.colore{
+    background-color: black;
+    
+}
+
+
+.botton{
+    background-color: mediumpurple; 
+    color: black; 
+    font-size: 17px; 
+    font-family: 'Monoton', cursive;
+    text-decoration: none;   
+    
+}
+.colorB{
+    color:white;
+}
+.info{
+    color:blueviolet ;
+    font-size: 25px ;
+    font-family: 'Fascinate', cursive;
+    text-align: center;
+}
+.imm{
+    float:left;
+   width:50%;
+   padding-top: 80px;
+   padding-bottom: 80px;
+   padding-left:20px;
+    
+}
+.info{
+    float:right;
+
+    padding-top: 80px;
+    padding-bottom:80px;
+
+}
+.ricLing{
+    position:absolute;
+    right:70px;
+}
+
+.titHome{
+    color:mediumpurple;
+    font-family: 'Monoton', cursive;
+}
+.ling{
+    float:right;
+    padding-top: 8px;
+    color:mediumpurple;
+}
